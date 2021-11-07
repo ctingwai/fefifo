@@ -1,0 +1,87 @@
+[
+  {
+    "order_no": "AGBUY13042020_1042",
+    "batched_by_pic_url": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
+    "batched_by_fullname": "Alex Lee",
+    "doc_title": "RFQList_13042020_1042",
+    "doc_url": "/RFQList_13042020_1042.csv",
+    "created_at": "2021-08-09 13:00:00",
+    "modified_at": "2021-08-09 14:33:28",
+    "items": [
+      {
+        "no": 1,
+        "category_name": "Seeds / Seedlings",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Chilli Sakata 651 (1500 seeds)",
+        "quantity": 26
+      },
+      {
+        "no": 2,
+        "category_name": "Nutrients / Fertilizer",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Acme Brand Fert A/B Set - 50KG",
+        "quantity": 114
+      },
+      {
+        "no": 3,
+        "category_name": "Pesticide / Fungicide",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Valiants ME (Methyl Eugenol) 300ml",
+        "quantity": 40
+      },
+      {
+        "no": 4,
+        "category_name": "Growing Medium",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Acme Branch Cocopeat - 30KG",
+        "quantity": 20
+      },
+      {
+        "no": 5,
+        "category_name": "Growing Medium",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Acme Branch Cocohusk - 50KG",
+        "quantity": 50
+      },
+      {
+        "no": 6,
+        "category_name": "Pesticide / Fungicide",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Decis (Delthametrine) 1L",
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "order_no": "AGBUY09242020_1112",
+    "batched_by_fullname": "Alex Lee",
+    "batched_by_pic_url": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
+    "doc_title": "RFQList_09242020_1112.csv",
+    "doc_url": "/RFQList_09242020_1112.csv",
+    "created_at": "2021-08-09 13:00:00",
+    "modified_at": "2021-08-09 14:33:28",
+    "items": [
+      {
+        "no": 1,
+        "category_name": "Seeds / Seedlings",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Chilli Sakata 651 (1500 seeds)",
+        "quantity": 26
+      },
+      {
+        "no": 2,
+        "category_name": "Nutrients / Fertilizer",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Acme Brand Fert A/B Set - 50KG",
+        "quantity": 114
+      },
+      {
+        "no": 3,
+        "category_name": "Pesticide / Fungicide",
+        "image_url": "https://image.shutterstock.com/image-vector/ad-banner-natural-beauty-products-600w-1780339244.jpg",
+        "description": "Valiants ME (Methyl Eugenol) 300ml",
+        "quantity": 40
+      }
+    ]
+  }
+]
