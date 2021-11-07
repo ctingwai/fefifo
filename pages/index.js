@@ -1,11 +1,8 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import ComingSoon from '../src/components/ComingSoon';
 
 export default function Index() {
   return (
-    <Container>
-      <Typography>Coming Soon...</Typography>
-    </Container>
+    <ComingSoon />
   );
 }

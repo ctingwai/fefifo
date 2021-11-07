@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 // Custom component
 import InputPurReqTab from '../src/components/InputPurReqTab';
 import InputPurReqContent from '../src/components/InputPurReqContent';
+import ComingSoon from '../src/components/ComingSoon';
 
 // Mocked data
 import orders from '../src/libs/mocked-input-purchase-requests';
@@ -23,7 +24,8 @@ export default function Index() {
         tab={tab}
         onTabChange={handleTabChange}
       />
-      <InputPurReqContent data={orders} />
+      {[0, 1].includes(tab) && (<InputPurReqContent data={orders} />)}
+      {[2, 3].includes(tab) && (<ComingSoon />)}
     </Container>
   );
 }

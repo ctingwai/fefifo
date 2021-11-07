@@ -36,7 +36,7 @@ function DetailsRow(props) {
               </TableHead>
               <TableBody>
                 {items.map((itemRow) => (
-                  <TableRow key={itemRow.date}>
+                  <TableRow key={itemRow.no}>
                     <TableCell component="th" scope="row">
                       {itemRow.no}
                     </TableCell>
@@ -84,7 +84,7 @@ function Row(props) {
         </TableCell>
         <TableCell>
           <a href={row.doc_url}>
-            <Image src="/excel_icon.png" alt="csv" width="64" height="64" style={{ margin: '8px' }} />
+            <Image src="/excel_icon.png" alt="csv" width="64" height="64" />
             <Typography>{row.doc_title}</Typography>
           </a>
         </TableCell>
@@ -108,7 +108,7 @@ export default function InputPurReqTable(props) {
         </TableHead>
         <TableBody>
           {props.data.map((row) => (
-            <Row key={row.name} row={row} />
+            <Row key={row.order_no} row={row} />
           ))}
         </TableBody>
       </Table>
