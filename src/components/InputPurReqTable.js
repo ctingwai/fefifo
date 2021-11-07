@@ -17,6 +17,46 @@ import Checkbox from '@mui/material/Checkbox';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
+function DetailsRow(props) {
+  const { items, open } = props;
+  return (
+    <TableRow>
+      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <Box sx={{ margin: 1 }}>
+            <Table size="small" aria-label="purchases">
+              <TableHead>
+                <TableRow>
+                  <TableCell></TableCell>
+                  <TableCell>Agri-Input Category</TableCell>
+                  <TableCell>Product Image</TableCell>
+                  <TableCell>Product Description</TableCell>
+                  <TableCell>Order Quantity</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {items.map((itemRow) => (
+                  <TableRow key={itemRow.date}>
+                    <TableCell component="th" scope="row">
+                      {itemRow.no}
+                    </TableCell>
+                    <TableCell>{itemRow.category_name}</TableCell>
+                    <TableCell>
+                      <Avatar src={itemRow.image_url} />
+                    </TableCell>
+                    <TableCell>{itemRow.description}</TableCell>
+                    <TableCell>{itemRow.quantity}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Box>
+        </Collapse>
+      </TableCell>
+    </TableRow>
+  );
+}
+
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
@@ -49,43 +89,7 @@ function Row(props) {
           </a>
         </TableCell>
       </TableRow>
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell></TableCell>
-                    <TableCell>Agri-Input Category</TableCell>
-                    <TableCell>Product Image</TableCell>
-                    <TableCell>Product Description</TableCell>
-                    <TableCell>Order Quantity</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {row.items.map((itemRow) => (
-                    <TableRow key={itemRow.date}>
-                      <TableCell component="th" scope="row">
-                        {itemRow.no}
-                      </TableCell>
-                      <TableCell>{itemRow.category_name}</TableCell>
-                      <TableCell>
-                        <Avatar src={itemRow.image_url} />
-                      </TableCell>
-                      <TableCell>{itemRow.description}</TableCell>
-                      <TableCell>{itemRow.quantity}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Box>
-          </Collapse>
-        </TableCell>
-      </TableRow>
+      <DetailsRow open={open} items={row.items} />
     </>
   );
 }
