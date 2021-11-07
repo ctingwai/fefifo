@@ -17,6 +17,9 @@ import Checkbox from '@mui/material/Checkbox';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
+// Utilities
+import moment from 'moment';
+
 function DetailsRow(props) {
   const { items, open } = props;
   return (
@@ -78,14 +81,22 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell>
-          <Avatar src={row.batched_by_pic_url} />
-          <Typography paragraph={true}>{row.batched_by_fullname}</Typography>
-          <Typography paragraph={true}>{row.created_at}</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Avatar src={row.batched_by_pic_url} />
+            <div>
+              <Typography>{row.batched_by_fullname}</Typography>
+              <Typography>
+                {moment(row.created_at, 'YYYY-MM-DD HH:mm:ss').format('dddd, MMMM Do YYYY, h:mm a')}
+              </Typography>
+            </div>
+          </Box>
         </TableCell>
         <TableCell>
           <a href={row.doc_url}>
-            <Image src="/excel_icon.png" alt="csv" width="64" height="64" />
-            <Typography>{row.doc_title}</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Image src="/excel_icon.png" alt="csv" width="64" height="64" />
+              <Typography m={2}>{row.doc_title}</Typography>
+            </Box>
           </a>
         </TableCell>
       </TableRow>
