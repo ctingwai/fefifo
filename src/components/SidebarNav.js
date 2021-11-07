@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -7,26 +8,17 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-// Sidebar items
-const items = [
-  {
-    text: 'Agri-Input Master Maintenance',
-  },
-  {
-    text: 'Supplier Master Maintenance',
-  },
-  {
-    text: 'Agri-Input Purchase Requests',
-  },
-];
+// Config
+import config from '../libs/config';
+const { routes } = config;
 
-export default function SidebarNav() {
+export default function SidebarNav(props) {
   return (
     <Drawer
       sx={{
@@ -45,10 +37,14 @@ export default function SidebarNav() {
       </Toolbar>
       <Divider />
       <List>
-        {items.map((item, index) => (
-          <ListItem button key={item.text}>
-            <ListItemText primary={item.text} />
-          </ListItem>
+        {routes.filter((r) => r.showInNav).map((item, index) => (
+          <Link key={item.title} href={item.pathname} passHref>
+            <ListItemButton
+              selected={item.pathname === props.pathname}
+            >
+              <ListItemText primary={item.title} />
+            </ListItemButton>
+          </Link>
         ))}
       </List>
     </Drawer>

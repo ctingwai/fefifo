@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import theme from '../src/styles/theme';
+import { useRouter } from 'next/router';
 
 // MUI components
 import createEmotionCache from '../src/styles/createEmotionCache';
@@ -16,16 +17,21 @@ import Box from '@mui/material/Box';
 // Custom sidebar
 import SidebarNav from '../src/components/SidebarNav';
 
+// Config
+import config from '../src/libs/config';
+
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const router = useRouter();
+  const routeConf = config.routes.find((r) => router.pathname === r.pathname);
 
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>My page</title>
+        <title>Fefifo</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
@@ -38,11 +44,11 @@ export default function MyApp(props) {
           >
             <Toolbar>
               <Typography variant="h6" noWrap component="div">
-                Permanent drawer
+                {routeConf.title}
               </Typography>
             </Toolbar>
           </AppBar>
-          <SidebarNav />
+          <SidebarNav pathname={router.pathname} />
           <Box
             component="main"
             sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
